@@ -10,7 +10,7 @@ rm -f Makefile.in
 rm -f config.status
 ./autogen.sh || echo done
 
-# CFLAGS="-O2" ./configure
-./configure.sh
+CFLAGS="-Os" ./configure
+#./configure.sh
 
-make -j 4
+make -j 'cat /proc/cpuinfo | grep processor | wc -l'
